@@ -1,7 +1,8 @@
-package com.mohcode.editing.domain;
+package com.mohcode.editing.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -15,10 +16,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name = "authors")
-public class Author {
+public class AuthorEntity {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY, generator = "author_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
